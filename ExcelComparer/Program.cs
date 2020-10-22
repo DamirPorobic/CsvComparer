@@ -1,19 +1,17 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 
 namespace ExcelComparer
 {
-    class Program
+    internal class Program
     {
-        private static char _separator = ';';
-        private static string _filePath1 = @"C:\Path\To\File1.CSV";
-        private static string _filePath2 = @"C:\Path\To\File1..CSV";
-        private static string _logFile = @"C:\Path\To\Log.txt";
+        private static readonly char _separator = ';';
+        private static readonly string _filePath1 = @"C:\Path\To\File1.CSV";
+        private static readonly string _filePath2 = @"C:\Path\To\File2.CSV";
+        private static readonly string _logFile = @"C:\Path\To\Log.txt";
 
         static void Main(string[] args)
         {
-            // Open the stream and read it back.
             using (var file1 = File.OpenText(_filePath1))
             {
                 using (var file2 = File.OpenText(_filePath2))
